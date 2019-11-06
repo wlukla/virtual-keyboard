@@ -1,0 +1,180 @@
+.wrapper {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.textarea {
+  outline: none;
+}
+
+.keyboard {
+  margin-top: 50px;
+  width: 800px;
+}
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.key {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000000;
+  border-radius: 4px;
+  color: #ffffff;
+  border: 2px solid black;
+  -webkit-transition: background-color 300ms linear;
+  transition: background-color 300ms linear;
+}
+
+.ru, .en, .lower, .upper {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: none;
+}
+
+.on, .active {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Backspace.functional {
+  width: 100px;
+}
+
+.Tab.functional {
+  width: 60px;
+}
+
+.Delete.functional {
+  width: 50px;
+}
+
+.CapsLock.functional {
+  width: 100px;
+}
+
+.Enter.functional {
+  width: 100px;
+}
+
+.ShiftLeft.functional,
+.ShiftRight.functional {
+  width: 130px;
+}
+
+.ControlLeft.functional {
+  width: 60px;
+}
+
+.AltLeft.functional,
+.AltRight.functional {
+  width: 60px;
+}
+
+.MetaLeft.functional,
+.MetaRight.functional {
+  width: 80px;
+}
+
+.Space {
+  width: 200px;
+}
+
+.functional {
+  height: 45px;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  font-size: 12px;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+.functional .on {
+  padding-left: 4px;
+  padding-bottom: 4px;
+}
+
+.ShiftRight,
+.Backspace,
+.Enter,
+.Delete {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.ShiftRight .on,
+.Backspace .on,
+.Enter .on,
+.Delete .on {
+  padding-right: 4px;
+}
+
+.ArrowRight,
+.ArrowLeft,
+.ArrowUp,
+.ArrowDown {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.ArrowRight .on,
+.ArrowLeft .on,
+.ArrowUp .on,
+.ArrowDown .on {
+  padding: 0;
+}
+
+.pressed {
+  color: #000000;
+  background-color: #ffffff;
+  -webkit-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
+}
+/*# sourceMappingURL=style.css.map */
