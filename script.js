@@ -160,7 +160,7 @@ function addTab() {
   const beforeCursor = textarea.value.slice(0, cursorStart);
   const afterCursor = textarea.value.slice(cursorStart, textarea.value.length);
 
-  textarea.value = [beforeCursor, '   ', afterCursor].join('');
+  textarea.value = `${beforeCursor}   ${afterCursor}`;
 
   textarea.selectionStart = cursorStart + 4;
   textarea.selectionEnd = cursorEnd + 3;
@@ -173,7 +173,7 @@ function addEnter() {
   const beforeCursor = textarea.value.slice(0, cursorStart);
   const afterCursor = textarea.value.slice(cursorStart, textarea.value.length);
 
-  textarea.value = [beforeCursor, '\n', afterCursor].join('');
+  textarea.value = `${beforeCursor}\n${afterCursor}`;
 
   textarea.selectionStart = cursorStart + 1;
   textarea.selectionEnd = cursorEnd + 1;
@@ -186,7 +186,7 @@ function doBackspace() {
   if (cursorEnd !== 0 && (cursorStart === cursorEnd)) {
     const beforeCursor = textarea.value.slice(0, cursorStart - 1);
     const afterCursor = textarea.value.slice(cursorStart, textarea.value.length);
-    textarea.value = [beforeCursor, afterCursor].join('');
+    textarea.value = `${beforeCursor}${afterCursor}`;
 
     textarea.selectionStart = cursorStart;
     textarea.selectionEnd = cursorEnd - 1;
@@ -194,14 +194,14 @@ function doBackspace() {
     if (cursorEnd > cursorStart) {
       const beforeCursor = textarea.value.slice(0, cursorStart - 1);
       const afterCursor = textarea.value.slice(cursorEnd, textarea.value.length);
-      textarea.value = [beforeCursor, afterCursor].join('');
+      textarea.value = `${beforeCursor}${afterCursor}`;
 
       textarea.selectionStart = cursorStart;
       textarea.selectionEnd = cursorStart;
     } else {
       const beforeCursor = textarea.value.slice(0, cursorEnd - 1);
       const afterCursor = textarea.value.slice(cursorStart, textarea.value.length);
-      textarea.value = [beforeCursor, afterCursor].join('');
+      textarea.value = `${beforeCursor}${afterCursor}`;
 
       textarea.selectionStart = cursorEnd;
       textarea.selectionEnd = cursorEnd;
@@ -216,7 +216,7 @@ function doDelete() {
   if (cursorStart === cursorEnd) {
     const beforeCursor = textarea.value.slice(0, cursorEnd);
     const afterCursor = textarea.value.slice(cursorEnd + 1, textarea.value.length);
-    textarea.value = [beforeCursor, afterCursor].join('');
+    textarea.value = `${beforeCursor}${afterCursor}`;
 
     textarea.selectionStart = cursorStart;
     textarea.selectionEnd = cursorEnd;
@@ -224,7 +224,7 @@ function doDelete() {
     if (cursorEnd > cursorStart) {
       const beforeCursor = textarea.value.slice(0, cursorStart);
       const afterCursor = textarea.value.slice(cursorEnd, textarea.value.length);
-      textarea.value = [beforeCursor, afterCursor].join('');
+      textarea.value = `${beforeCursor}${afterCursor}`;
 
       textarea.selectionStart = cursorStart;
       textarea.selectionEnd = cursorStart;
@@ -232,7 +232,7 @@ function doDelete() {
       const beforeCursor = textarea.value.slice(0, cursorEnd);
       const afterCursor = textarea.value.slice(cursorStart, textarea.value.length);
 
-      textarea.value = [beforeCursor, afterCursor].join('');
+      textarea.value = `${beforeCursor}${afterCursor}`;
 
       textarea.selectionStart = cursorEnd;
       textarea.selectionEnd = cursorEnd;
@@ -405,7 +405,7 @@ document.addEventListener('mousedown', (e) => {
     if (char === '&lt;') { char = '<'; }
     if (char === '&gt;') { char = '>'; }
 
-    textarea.value = [beforeCursor, char, afterCursor].join('');
+    textarea.value = `${beforeCursor}${char}${afterCursor}`;
 
     textarea.selectionStart += 1;
     textarea.selectionEnd += 1;
@@ -421,7 +421,7 @@ document.addEventListener('mousedown', (e) => {
     if (char === '&lt;') { char = '<'; }
     if (char === '&gt;') { char = '>'; }
 
-    textarea.value = [beforeCursor, char, afterCursor].join('');
+    textarea.value = `${beforeCursor}${char}${afterCursor}`;
 
     textarea.selectionStart = cursorStart + 1;
     textarea.selectionEnd = cursorEnd + 1;
@@ -489,7 +489,7 @@ document.addEventListener('keydown', (e) => {
     if (char === '&lt;') { char = '<'; }
     if (char === '&gt;') { char = '>'; }
 
-    textarea.value = [beforeCursor, char, afterCursor].join('');
+    textarea.value = `${beforeCursor}${char}${afterCursor}`;
 
     textarea.selectionStart = cursorStart + 1;
     textarea.selectionEnd = cursorEnd + 1;
