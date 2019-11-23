@@ -345,41 +345,38 @@ if (window.localStorage.getItem('lang') === 'en') {
 
 // adding mousedown listeners for clicks on virtual keyboard
 keyboard.addEventListener('mousedown', (e) => {
-  if (e.target.classList.contains('Tab')
-    || e.target.parentElement.parentElement.classList.contains('Tab')) {
+  const isTargetClass = (className) => e.target.classList.contains(className)
+    || e.target.parentElement.parentElement.classList.contains(className);
+
+  if (isTargetClass('Tab')) {
     addTab();
-  } else if (e.target.classList.contains('Enter')
-    || e.target.parentElement.classList.contains('Enter')) {
+  } else if (isTargetClass('Enter')) {
     addEnter();
-  } else if (e.target.classList.contains('Backspace')
-    || e.target.parentElement.classList.contains('Backspace')) {
+  } else if (isTargetClass('Backspace')) {
     doBackspace();
-  } else if (e.target.classList.contains('Delete')
-    || e.target.parentElement.classList.contains('Delete')) {
+  } else if (isTargetClass('Delete')) {
     doDelete();
-  } else if (e.target.classList.contains('ShiftLeft')
-    || e.target.parentElement.classList.contains('ShiftLeft')
-    || e.target.classList.contains('ShiftRight')
-    || e.target.parentElement.classList.contains('ShiftRight')) {
+  } else if (isTargetClass('ShiftLeft') || isTargetClass('ShiftRight')) {
     doShift();
-  } else if (e.target.classList.contains('ArrowLeft')
-    || e.target.parentElement.classList.contains('ArrowLeft')) {
+  } else if (isTargetClass('ArrowLeft')) {
     doArrowLeft();
-  } else if (e.target.classList.contains('ArrowLeft')
-    || e.target.parentElement.classList.contains('ArrowLeft')) {
-    doArrowLeft();
-  } else if (e.target.classList.contains('ArrowRight')
-    || e.target.parentElement.classList.contains('ArrowRight')) {
+  } else if (isTargetClass('ArrowRight')) {
     doArrowRight();
-  } else if (e.target.classList.contains('CapsLock')
-    || e.target.parentElement.classList.contains('CapsLock')) {
+  } else if (isTargetClass('CapsLock')) {
     if (isCaps === false) {
       doCaps();
     } else {
       doUncaps();
     }
   } else if (e.target.classList.contains('key')
-      && !functionalKeys.includes(e.target.parentElement.parentElement.classList[1])) {
+      && !functionalKeys.includes(e.target.parentElement.parentElement.classList[1])
+      && !isTargetClass('ArrowUp')
+      && !isTargetClass('ArrowDown')
+      && !isTargetClass('AltLeft')
+      && !isTargetClass('AltRight')
+      && !isTargetClass('ControlLeft')
+      && !isTargetClass('MetaLeft')
+      && !isTargetClass('MetaRight')) {
     cursorStart = textarea.selectionStart;
     cursorEnd = textarea.selectionEnd;
 
@@ -426,25 +423,20 @@ keyboard.addEventListener('mousedown', (e) => {
 keyboard.addEventListener('mouseup', (e) => {
   textarea.focus();
 
-  if (e.target.classList.contains('ShiftLeft')
-    || e.target.parentElement.parentElement.classList.contains('ShiftLeft')
-    || e.target.classList.contains('ShiftRight')
-    || e.target.parentElement.parentElement.classList.contains('ShiftRight')) {
+  const isTargetClass = (className) => e.target.classList.contains(className)
+    || e.target.parentElement.parentElement.classList.contains(className);
+
+  if (isTargetClass('ShiftLeft') || isTargetClass('ShiftRight')) {
     doUnshift();
   }
   if (e.target.classList.contains('key')
-    && !(e.target.classList.contains('CapsLock')
-        || e.target.parentElement.parentElement.classList.contains('CapsLock'))) {
+    && !isTargetClass('CapsLock')) {
     e.target.classList.remove('pressed');
   } else if (e.target.classList.contains('active')
-    && !(e.target.classList.contains('CapsLock')
-        || e.target.parentElement.parentElement.classList.contains('CapsLock'))) {
+    && !isTargetClass('CapsLock')) {
     e.target.parentElement.parentElement.classList.remove('pressed');
   }
-  if (!e.target.classList.contains('Tab')
-    && !e.target.parentElement.classList.contains('Tab')
-    && !e.target.classList.contains('Delete')
-    && !e.target.parentElement.classList.contains('Delete')) {
+  if (!isTargetClass('Tab') && isTargetClass('Delete')) {
     textarea.selectionStart = cursorStart + 1;
     textarea.selectionEnd = cursorEnd + 1;
   }
