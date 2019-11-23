@@ -76,7 +76,13 @@ const keyboardSymbols = [
   ],
 ];
 
-const functionalKeys = ['Backspace', 'Tab', 'Delete', 'CapsLock', 'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft', 'AltLeft', 'MetaLeft', 'MetaRight', 'AltRight', 'ArrowLeft', 'ArrowRight', 'ArrowDown', 'ArrowUp', 'Space'];
+const functionalKeys = [
+  'Backspace', 'Tab', 'Delete', 'CapsLock',
+  'Enter', 'ShiftLeft', 'ShiftRight', 'ControlLeft',
+  'AltLeft', 'MetaLeft', 'MetaRight', 'AltRight',
+  'ArrowLeft', 'ArrowRight', 'ArrowDown', 'ArrowUp',
+  'Space',
+];
 
 // creating wrapper
 const wrapper = document.createElement('div');
