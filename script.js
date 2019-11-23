@@ -371,21 +371,6 @@ keyboard.addEventListener('mousedown', (e) => {
   } else if (e.target.classList.contains('ArrowRight')
     || e.target.parentElement.classList.contains('ArrowRight')) {
     doArrowRight();
-  } else if (e.target.classList.contains('ControlLeft')
-    || e.target.parentElement.classList.contains('ControlLeft')
-    || e.target.classList.contains('AltLeft')
-    || e.target.parentElement.classList.contains('AltLeft')
-    || e.target.classList.contains('AltRight')
-    || e.target.parentElement.classList.contains('AltRight')
-    || e.target.classList.contains('MetaLeft')
-    || e.target.parentElement.classList.contains('MetaLeft')
-    || e.target.classList.contains('MetaRight')
-    || e.target.parentElement.classList.contains('MetaRight')
-    || e.target.classList.contains('ArrowUp')
-    || e.target.parentElement.classList.contains('ArrowUp')
-    || e.target.classList.contains('ArrowDown')
-    || e.target.parentElement.classList.contains('ArrowDown')) {
-    // doNothing();
   } else if (e.target.classList.contains('CapsLock')
     || e.target.parentElement.classList.contains('CapsLock')) {
     if (isCaps === false) {
