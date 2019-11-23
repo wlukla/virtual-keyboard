@@ -108,23 +108,25 @@ for (let row = 0; row < keyboardSymbols.length; row += 1) {
   // filling rows with keys
   for (let key = 0; key < keyboardSymbols[row].length; key += 1) {
     const keyDiv = document.createElement('div');
+    const keyClassIndex = keyboardSymbols[row][key].length - 1;
+    const keyClass = keyboardSymbols[row][key][keyClassIndex];
     keyDiv.classList.add('key');
 
     const ru = document.createElement('div');
-    ru.classList.add(keyboardSymbols[row][key][keyboardSymbols[row][key].length - 1], 'ru', 'on');
+    ru.classList.add(keyboardSymbols[row][key][keyClassIndex], 'ru', 'on');
 
-    if (functionalKeys.includes(keyboardSymbols[row][key][keyboardSymbols[row][key].length - 1])) {
-      keyDiv.classList.add(keyboardSymbols[row][key][keyboardSymbols[row][key].length - 1], 'functional');
+    if (functionalKeys.includes(keyClass)) {
+      keyDiv.classList.add(keyClass, 'functional');
     }
 
-    if (keyboardSymbols[row][key][keyboardSymbols[row][key].length - 1] === 'Space') {
+    if (keyClass === 'Space') {
       keyDiv.classList.add('Space');
     }
 
     const en = document.createElement('div');
-    en.classList.add(keyboardSymbols[row][key][keyboardSymbols[row][key].length - 1], 'en');
+    en.classList.add(keyClass, 'en');
 
-    for (let sym = 0; sym < keyboardSymbols[row][key].length - 1; sym += 1) {
+    for (let sym = 0; sym < keyClassIndex; sym += 1) {
       const span = document.createElement('span');
       span.innerHTML = keyboardSymbols[row][key][sym];
       if (sym % 2 === 0) {
