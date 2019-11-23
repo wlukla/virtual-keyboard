@@ -404,6 +404,7 @@ keyboard.addEventListener('mousedown', (e) => {
 
     if (char === '&lt;') { char = '<'; }
     if (char === '&gt;') { char = '>'; }
+    if (char === '&amp;') { char = '&'; }
 
     textarea.value = `${beforeCursor}${char}${afterCursor}`;
 
@@ -466,6 +467,7 @@ document.addEventListener('keydown', (e) => {
 
     if (char === '&lt;') { char = '<'; }
     if (char === '&gt;') { char = '>'; }
+    if (char === '&amp;') { char = '&'; }
 
     textarea.value = `${beforeCursor}${char}${afterCursor}`;
 
