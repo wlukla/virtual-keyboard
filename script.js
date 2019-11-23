@@ -245,7 +245,7 @@ function doShift() {
   for (let row = 0; row < rows.length; row += 1) {
     const keys = rows[row].children;
     for (let key = 0; key < keys.length; key += 1) {
-      if (keys[key].querySelectorAll('.lower.active').length !== 0) {
+      if (keys[key].querySelectorAll('.lower.active')) {
         keys[key].querySelectorAll('.upper').forEach((item) => item.classList.add('active'));
         keys[key].querySelectorAll('.lower').forEach((item) => item.classList.remove('active'));
       } else {
