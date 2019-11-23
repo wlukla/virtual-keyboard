@@ -344,7 +344,7 @@ if (window.localStorage.getItem('lang') === 'en') {
 }
 
 // adding mousedown listeners for clicks on virtual keyboard
-document.addEventListener('mousedown', (e) => {
+keyboard.addEventListener('mousedown', (e) => {
   if (e.target.classList.contains('Tab')
     || e.target.parentElement.parentElement.classList.contains('Tab')) {
     addTab();
@@ -438,7 +438,7 @@ document.addEventListener('mousedown', (e) => {
   }
 });
 
-document.addEventListener('mouseup', (e) => {
+keyboard.addEventListener('mouseup', (e) => {
   textarea.focus();
 
   if (e.target.classList.contains('ShiftLeft')
