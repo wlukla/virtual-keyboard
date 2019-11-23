@@ -460,8 +460,7 @@ document.addEventListener('keydown', (e) => {
     document.querySelector(['.', e.code].join('')).parentElement.classList.add('pressed');
   }
 
-  if ((e.code === 'ShiftRight' && (e.ctrlKey))
-    || (e.code === 'ShiftLeft' && (e.ctrlKey))) {
+  if ((e.code === 'ShiftRight' || e.code === 'ShiftLeft') && e.ctrlKey) {
     changeLang();
   } else if (!functionalKeys.includes(e.code) || e.code === 'Space') {
     cursorStart = textarea.selectionStart;
